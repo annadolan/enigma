@@ -3,19 +3,19 @@ require_relative "key_generator"
 require_relative "offset_generator"
 
 class Rotator
-  attr_reader :key, :offset, :date
+  attr_reader :key, :offset, :date, :array_zero
   def initialize
     @new_key = KeyGenerator.new
     @new_offset = OffsetGenerator.new
-    @key = key
-    @offset = offset
-    @date = date
-  end
-
-  def rotate_calculator
     @key = @new_key.key
     @offset = @new_offset.offset
     @date = @new_offset.date
+  end
+
+  def rotate_calculator
+    #@key = @new_key.key
+    #@offset = @new_offset.offset
+    #@date = @new_offset.date
     off_a = @offset[0].to_i
     off_b = @offset[1].to_i
     off_c = @offset[2].to_i
@@ -31,13 +31,13 @@ class Rotator
   end
 
   def rotated_alphabets
-    rotate_calculator #TESTS BAD WITHOUT, RUNS BAD WITH
+    rotate_calculator
     alphabet = ("a".."z").to_a
 
-  @array_zero = alphabet.rotate(@rotate_a % 26)
-  @array_one = alphabet.rotate(@rotate_b % 26)
-  @array_two = alphabet.rotate(@rotate_c % 26)
-  @array_three = alphabet.rotate(@rotate_d % 26)
+    @array_zero = alphabet.rotate(@rotate_a % 26)
+    @array_one = alphabet.rotate(@rotate_b % 26)
+    @array_two = alphabet.rotate(@rotate_c % 26)
+    @array_three = alphabet.rotate(@rotate_d % 26)
   end
 
   def input_rotate(input)
@@ -60,7 +60,7 @@ class Rotator
    end
 end
 
-#r = Rotator.new
-# puts r.rotate_calculator
-# r.rotated_alphabets
-# puts r.input_rotate("annaissuperdupercool")
+ # r = Rotator.new
+ # r.rotate_calculator
+ #  r.rotated_alphabets
+ #  puts r.input_rotate("hello darkness my old friend")
