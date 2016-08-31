@@ -1,6 +1,6 @@
 require "pry"
-require_relative "key_generator"
-require_relative "offset_generator"
+require "./lib/key_generator"
+require "./lib/offset_generator"
 
 class RotatorDecrypt
   attr_reader :key, :offset, :date
@@ -8,7 +8,7 @@ class RotatorDecrypt
 
   end
 
-  def rotate_calculator(key, date) #THIS METHOD IS THE ONLY DIFFERENCE!
+  def rotate_calculator(key, date)
     date_i = date.to_i
     offset = (date_i * date_i).to_s[-4..-1]
     off_a = offset[0].to_i
@@ -26,7 +26,7 @@ class RotatorDecrypt
   end
 
   def rotated_alphabets_decrypt
-    alphabet = ("a".."z").to_a #(" ".."z").to_a (extension) CHANGE % 91
+    alphabet = ("a".."z").to_a
 
     @array_zero = alphabet.rotate(26 - (@rotate_a % 26))
     @array_one = alphabet.rotate(26 - (@rotate_b % 26))
@@ -36,6 +36,7 @@ class RotatorDecrypt
 
   def input_rotate_decrypt(input)
     rotated_alphabets_decrypt
+    
     encrypted = input.chars
     rotated_message = []
     alphabet = ("a".."z").to_a
@@ -53,7 +54,3 @@ class RotatorDecrypt
     rotated_message.join
    end
 end
-
-# rd = RotatorDecrypt.new
-# rd.rotate_calculator("63529", "82816")
-# puts rd.input_rotate_decrypt("bvquiddwudjrmrswusqjayguuxmkfrlq")
