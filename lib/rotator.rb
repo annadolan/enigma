@@ -13,9 +13,6 @@ class Rotator
   end
 
   def rotate_calculator
-    #@key = @new_key.key
-    #@offset = @new_offset.offset
-    #@date = @new_offset.date
     off_a = @offset[0].to_i
     off_b = @offset[1].to_i
     off_c = @offset[2].to_i

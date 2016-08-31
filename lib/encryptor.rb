@@ -4,8 +4,10 @@ require_relative "rotator"
 class Encryptor
   attr_reader :key, :date
   def initialize
+    # @key = key
+    # @date = date
     @rotator = Rotator.new
-    @input_array = ARGV
+    #@input_array = ARGV
     @key = @rotator.key
     @date = @rotator.date
 

@@ -24,8 +24,3 @@ class RotatorDecryptTest < Minitest::Test
 
 
 end
-# 4225
-# 16
-# 25
-# 36
-# 50
