@@ -1,6 +1,8 @@
 require "./lib/key_generator"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
+
 class KeyGeneratorTest < Minitest::Test
 
   def test_five_digit_key_is_generated

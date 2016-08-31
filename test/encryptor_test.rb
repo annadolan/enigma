@@ -2,6 +2,7 @@ require "pry"
 require "./lib/encryptor"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
 
 class EncryptorTest < Minitest::Test
 
@@ -9,7 +10,7 @@ class EncryptorTest < Minitest::Test
     e = Encryptor.new
     assert_instance_of Encryptor, e
   end
-  
+
   def test_encrypt_returns_different_string_of_same_length_as_input
     e = Encryptor.new
 

@@ -2,6 +2,7 @@ require "pry"
 require "./lib/cracker"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
 
 class CrackerTest < Minitest::Test
   def test_cracker_exists

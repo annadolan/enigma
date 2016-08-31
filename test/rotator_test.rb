@@ -2,6 +2,8 @@ require "pry"
 require "./lib/rotator"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
+
 class RotatorTest < Minitest::Test
 
 

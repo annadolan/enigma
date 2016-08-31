@@ -2,6 +2,7 @@ require "pry"
 require "./lib/decryptor"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
 
 class DecryptorTest < Minitest::Test
   def test_decryptor_exists

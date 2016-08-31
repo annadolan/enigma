@@ -60,15 +60,8 @@ class Enigma
 
       cracked_text = d.decrypt(input)
     end
-
-
 end
 
-e = Enigma.new
 
-puts e.encrypt("hello darkness my old friend..end..", "12345", Date.today)
-puts e.encrypt("hello darkness my old friend..end..")
-puts e.decrypt("cfykj qzmladnt lt bky sqdfac..rmy..", "12345", Date.today)
-puts e.decrypt("cfykj qzmladnt lt bky sqdfac..rmy..", "12345")
-puts e.crack("cfykj qzmladnt lt bky sqdfac..rmy..")
+
 puts e.crack("cfykj qzmladnt lt bky sqdfac..rmy..", Date.today)

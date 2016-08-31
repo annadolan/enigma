@@ -2,6 +2,7 @@ require "pry"
 require "./lib/rotator_decrypt.rb"
 require "minitest/autorun"
 require "minitest/pride"
+require_relative "test_helper"
 
 class RotatorDecryptTest < Minitest::Test
   def test_rotate_calculator_works
