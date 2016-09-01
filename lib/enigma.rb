@@ -1,3 +1,4 @@
+require "pry"
 require "./lib/cracker"
 require "./lib/rotator_decrypt"
 require "./lib/key_generator"
@@ -61,7 +62,3 @@ class Enigma
       cracked_text = d.decrypt(input)
     end
 end
-
-
-
-puts e.crack("cfykj qzmladnt lt bky sqdfac..rmy..", Date.today)

@@ -7,7 +7,7 @@ date = ARGV[2]
 c = Cracker.new(date)
 
 
-puts input = File.read(read_from)
+input = File.read(read_from)
 
 
 key_i = c.crack(input.chomp)
